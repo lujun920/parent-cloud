@@ -1,12 +1,12 @@
 server:
-  port: 8004
+  port: 8005
 management:
-  port: 9218
+  port: 9005
   context-path: '/e58a0ff5-9f60-4545-9aa2-2b91c8a6d53b'
 eureka:
   client:
     service-url:
-      defaultZone: 'http://127.0.0.1:8001/eureka/'
+      defaultZone: http://127.0.0.1:8001/eureka/
     registry-fetch-interval-seconds: 5
   instance:
     metadata-map:
@@ -21,8 +21,13 @@ eureka:
     lease-renewal-interval-in-seconds: 10
 spring:
   application:
-    name: 'spring-boot-admin'
+    name: spring-boot-admin
   cloud:
     loadbalancer:
       retry:
         enabled: true
+  boot:
+    admin:
+      turbine:
+        url: http://127.0.0.1:8004/turbine.stream
+        clusters: style

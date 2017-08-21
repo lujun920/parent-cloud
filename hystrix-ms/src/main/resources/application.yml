@@ -4,12 +4,12 @@ management:
   port: 9004
   context-path: /9511d89d-6488-4293-8df8-c4feb8681e83
 turbine:
-  app-config: user-ms #,account-ms
+  app-config: account-ms, user-ms
   aggregator:
     clusterConfig: style
   cluster-name-expression: metadata['cluster']
-  instanceUrlSuffix:
-    prontera: /78d504ff-82e8-4a87-82e8-724d72d1171b/hystrix.stream
+  instanceUrlSuffix: 78d504ff-82e8-4a87-82e8-724d72d1171b/hystrix.stream
+#    prontera: /78d504ff-82e8-4a87-82e8-724d72d1171b/hystrix.stream
 #turbine:
 #  appConfig: account
 #  aggregator:
