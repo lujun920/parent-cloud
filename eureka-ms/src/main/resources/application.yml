@@ -3,9 +3,28 @@ spring:
     name: eureka-ms
 server:
   port: 8001
+
+#actuator 应用系统的自省和监控的集成功能
+management:
+  port: 9001
+  context-path: /55395018-70b7-47c3-8fef-5bf24c9da9af
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    metadata-map:
+      cluster: style
+      management:
+        port: ${management.port}
+        context-path: ${management.context-path}
+      health:
+        path: ${management.context-path}/health
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
       defaultZone: http://localhost:${server.port}/eureka/
+    fetch-registry: false
+    register-with-eureka: false
+  server:
+    renewal-percent-threshold: 0.8

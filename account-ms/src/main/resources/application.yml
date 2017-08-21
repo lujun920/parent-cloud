@@ -1,9 +1,44 @@
 spring:
   application:
     name: account-ms
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: 'config-server'
+#      fail-fast: true
+#  zipkin:
+#    base-url: 'http://127.0.0.1:9411/'
 server:
   port: 8002
+management:
+  port: 9002
+  context-path: /78d504ff-82e8-4a87-82e8-724d72d1171b
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+#      defaultZone: 'http://eureka1:8763/eureka/,http://eureka2:8762/eureka/'
+      defaultZone: http://127.0.0.1:8001/eureka/
+  instance:
+    metadata-map:
+      cluster: style
+      management:
+        port: ${management.port}
+        context-path: ${management.context-path}
+      health:
+        path: ${management.context-path}/health
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
+    prefer-ip-address: false
+#自动配置
+#flyway:
+#  enabled: true
+#  baseline-on-migrate: true
+#  validate-on-migrate: false
+hystrix:
+  config:
+    stream:
+      maxConcurrentConnections: 10
