@@ -1,40 +1,15 @@
-server:
-  port: 8004
-management:
-  port: 9004
-  context-path: /9511d89d-6488-4293-8df8-c4feb8681e83
-turbine:
-  app-config: account-ms, user-ms
-  aggregator:
-    clusterConfig: style
-  cluster-name-expression: metadata['cluster']
-  instanceUrlSuffix: 78d504ff-82e8-4a87-82e8-724d72d1171b/hystrix.stream
-#    prontera: /78d504ff-82e8-4a87-82e8-724d72d1171b/hystrix.stream
-#turbine:
-#  appConfig: account
-#  aggregator:
-#    clusterConfig: prontera
-#  clusterNameExpression: metadata['cluster']
-
-eureka:
-  client:
-    service-url:
-#      defaultZone: 'http://eureka1:8763/eureka/,http://eureka2:8762/eureka/'
-#      defaultZone: 'http://139.224.227.35:8000/eureka/'
-      defaultZone: http://127.0.0.1:8001/eureka/
-  instance:
-    metadata-map:
-      management:
-        port: ${management.port}
-        context-path: ${management.context-path}
-      health:
-        path: ${management.context-path}/health
-    status-page-url-path: ${management.context-path}/info
-    health-check-url-path: ${management.context-path}/health
 spring:
   application:
     name: hystrix-ms
-  cloud:
-    loadbalancer:
-      retry:
-        enabled: true
+server:
+  port: 8004
+turbine:
+  app-config: account-ms, user-ms
+  aggregator:
+    clusterConfig: default
+  cluster-name-expression: metadata['cluster']
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8001/eureka/
+

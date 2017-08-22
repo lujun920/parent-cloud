@@ -1,5 +1,6 @@
 package com.zt.controller;
 
+import com.zt.service.HiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServiceController {
     private static final Logger logger = LoggerFactory.getLogger(ServiceController.class);
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        Integer r = a + b;
-        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return r;
+    public String add(@RequestParam Integer a, @RequestParam Integer b) {
+     return service.getAdd1("123");
     }
-
     @Autowired
-    private DiscoveryClient client;
+    private HiService service;
 }

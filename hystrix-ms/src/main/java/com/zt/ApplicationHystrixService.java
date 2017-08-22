@@ -9,9 +9,9 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  * Hello world!
  *
  */
-@EnableTurbine
-@EnableHystrixDashboard
 @SpringBootApplication
+@EnableHystrixDashboard
+@EnableTurbine
 public class ApplicationHystrixService
 {
     public static void main( String[] args )
