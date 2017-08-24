@@ -1,15 +1,22 @@
 spring:
   application:
     name: hystrix-ms
+
 server:
   port: 8004
 turbine:
   app-config: account-ms, user-ms
   aggregator:
     clusterConfig: default
-  cluster-name-expression: metadata['cluster']
+  cluster-name-expression: new String("default")
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8001/eureka/
+
+info:
+  application:
+    name: Hystrix+Turbine监控
+    version: 1.0-SNAPSHOT
+    author: lujing
 

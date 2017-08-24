@@ -1,5 +1,5 @@
 package com.zt.service;
 
 public interface HiService {
-    public String getAdd1(String name);
+    public String getUserName(String name);
 }

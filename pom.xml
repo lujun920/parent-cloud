@@ -23,6 +23,7 @@
     <module>user-ms</module>
     <module>spring-boot-admin-ms</module>
     <module>hystrix-ms</module>
+    <module>zipkin-ms</module>
   </modules>
 
 	<parent>

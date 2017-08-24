@@ -1,6 +1,8 @@
 spring:
   application:
     name: user-ms
+  zipkin:
+    base-url: http://127.0.0.1:8006/
 server:
   port: 8003
 eureka:
@@ -15,3 +17,12 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1500
+feign:
+  hystrix:
+   enabled: true
+
+info:
+  application:
+    name: user服务
+    version: 1.0-SNAPSHOT
+    author: lujing

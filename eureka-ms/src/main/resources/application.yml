@@ -9,3 +9,10 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka/
     fetch-registry: false
     register-with-eureka: false
+
+info:
+  application:
+    name: Eureka服务注册中心
+    version: 1.0-SNAPSHOT
+    description: 单点服务
+    author: lujing

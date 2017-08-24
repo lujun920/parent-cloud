@@ -1,33 +1,27 @@
+spring:
+  application:
+    name: spring-boot-admin
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,turbine.stream
+      turbine:
+        clusters: default
+        url: http://127.0.0.1:8004/turbine.stream
+      client:
+        prefer-ip: true
+    mvc:
+      async:
+        request-timeout: -1
 server:
   port: 8005
-management:
-  port: 9005
-  context-path: '/e58a0ff5-9f60-4545-9aa2-2b91c8a6d53b'
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8001/eureka/
-    registry-fetch-interval-seconds: 5
-  instance:
-    metadata-map:
-      management:
-        port: ${management.port}
-        context-path: ${management.context-path}
-      health:
-        path: /health
-    status-page-url-path: /info
-    health-check-url-path: /health
-    prefer-ip-address: false
-    lease-renewal-interval-in-seconds: 10
-spring:
+
+info:
   application:
-    name: spring-boot-admin
-  cloud:
-    loadbalancer:
-      retry:
-        enabled: true
-  boot:
-    admin:
-      turbine:
-        url: http://127.0.0.1:8004/turbine.stream
-        clusters: style
+    name: Spring Boot Admin管理中心
+    version: 1.0-SNAPSHOT
+    author: lujing

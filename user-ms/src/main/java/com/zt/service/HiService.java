@@ -1,4 +1,4 @@
-package com.zt.controller.service;
+package com.zt.service;
 
 public interface HiService {
     public String getAdd(String name);
