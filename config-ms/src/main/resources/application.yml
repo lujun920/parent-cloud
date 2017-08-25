@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config-ms
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lujun920/parent-cloud/     # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: lujun920@yeah.net # git仓库的账号
+          password: lj8894152 # git仓库的密码
+server:
+  port: 8007
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8001/eureka/
+
+info:
+  application:
+    name: 服务配置中心
+    version: 1.0-SNAPSHOT
+    author: lujing
+

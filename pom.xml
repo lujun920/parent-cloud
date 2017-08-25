@@ -24,6 +24,7 @@
     <module>spring-boot-admin-ms</module>
     <module>hystrix-ms</module>
     <module>zipkin-ms</module>
+    <module>config-ms</module>
   </modules>
 
 	<parent>

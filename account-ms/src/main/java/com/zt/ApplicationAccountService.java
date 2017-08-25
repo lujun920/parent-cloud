@@ -17,10 +17,4 @@ public class ApplicationAccountService {
     public static void main( String[] args ){
         SpringApplication.run(ApplicationAccountService.class, args);
     }
-
-//    @Bean
-//    @LoadBalanced
-//    RestTemplate restTemplate() {
-//        return new RestTemplate();
-//    }
 }

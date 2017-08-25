@@ -1,6 +1,7 @@
 spring:
   application:
     name: account-ms
+#zipkin集成
   zipkin:
     base-url: http://127.0.0.1:8006/
 server:
@@ -17,6 +18,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1500
+#监控开启
 feign:
   hystrix:
    enabled: true
