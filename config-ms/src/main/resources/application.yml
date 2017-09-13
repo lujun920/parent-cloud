@@ -11,10 +11,10 @@ spring:
 #          password:  # git仓库的密码
 server:
   port: 8007
-
 eureka:
   client:
     service-url:
+#      defaultZone: 'http://eureka1:8763/eureka/,http://eureka2:8762/eureka/'
       defaultZone: http://127.0.0.1:8001/eureka/
 
 info:

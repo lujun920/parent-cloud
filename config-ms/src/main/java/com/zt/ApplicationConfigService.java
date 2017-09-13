@@ -10,4 +10,5 @@ public class ApplicationConfigService {
     public static void main( String[] args ) {
         SpringApplication.run(ApplicationConfigService.class, args);
     }
+
 }
